@@ -1,0 +1,156 @@
+﻿@model IEnumerable<Project_FlightManagementSystem.Models.FMS_tbl_FlightScheduleDetails>
+
+@{
+    ViewBag.Title = "ViewAllFlightScheduling";
+}
+<style>
+    #add {
+        background-image: url('../../scripts/Emirates-retired-the-last-Airbus-A330-and-A340-aircraft-from-its-fleet1.jpg');
+    }
+</style>
+
+<body id="add">
+    <div class="container" style="background-color:white">
+
+        <h2>View All Flight Scheduling</h2>
+        <br /><br />
+      
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FlightScheduleId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeparturePlace)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DestinationPlace)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Flight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DepartureDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ArrivalTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PremiumClassFare)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstClassFare)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EconomyClassFare)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PremiumClassSeatingAvailability)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstClassSeatingAvailability)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EconomyClassSeatingAvailability)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VAT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TAX)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Distance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.stats)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descriptions)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_AirBusDetails.Name)
+                </th>
+                <th>Details</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FlightScheduleId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeparturePlace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DestinationPlace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Flight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartureDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ArrivalTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PremiumClassFare)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstClassFare)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EconomyClassFare)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PremiumClassSeatingAvailability)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstClassSeatingAvailability)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EconomyClassSeatingAvailability)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VAT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TAX)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Distance)
+                    </td>
+                    <td>
+                        @if (item.stats == true)
+                        {
+                            <label>Scheduled</label>
+                        }
+                        else if (item.stats == false)
+                        {
+                            <label>Cancelled</label>
+                        }
+                        else
+                        {
+                            <label>Completed</label>
+                        }
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descriptions)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FMS_tbl_AirBusDetails.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Update", "EditFlightScheduling", new { id = item.FlightScheduleId }) |
+                       
+                        @Html.ActionLink("Cancel", "DeleteFlightSchedule", new { id = item.FlightScheduleId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>

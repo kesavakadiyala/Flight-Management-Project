@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CHN32_MMS124_TESTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FMS_tbl_AirBusDetails">
+    <Key>
+      <PropertyRef Name="AirBusId" />
+    </Key>
+    <Property Name="AirBusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="RegistrstionNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfCommencement" Type="DateTime" Precision="3" />
+    <Property Name="ManufacturingDate" Type="DateTime" Precision="3" />
+    <Property Name="AirBusSeries" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PremiumClassSeatingCapacity" Type="Int32" />
+    <Property Name="FirstClassSeatingCapacity" Type="Int32" />
+    <Property Name="EconomyClassSeatingCapacity" Type="Int32" />
+    <Property Name="TakeOffWeight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MaximumFlightRange" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="FMS_tbl_AirBusSeries" Relationship="Self.FK__FMS_tbl_A__AirBu__09160B73" FromRole="FMS_tbl_AirBusDetails" ToRole="FMS_tbl_AirBusSeries" />
+    <NavigationProperty Name="FMS_tbl_FlightScheduleDetails" Relationship="Self.FK__FMS_tbl_F__AirBu__0CE69C57" FromRole="FMS_tbl_AirBusDetails" ToRole="FMS_tbl_FlightScheduleDetails" />
+  </EntityType>
+  <EntityType Name="FMS_tbl_AirBusSeries">
+    <Key>
+      <PropertyRef Name="Series" />
+    </Key>
+    <Property Name="AirBusSeriesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Series" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Height" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AirBusLength" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MaxTakeOffWeight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="StandardFuelCapacity" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MaxSpeed" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CabinLength" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PremiumClassSeatingCapacity" Type="Int32" />
+    <Property Name="FirstClassSeatingCapacity" Type="Int32" />
+    <Property Name="EconomyClassSeatingCapacity" Type="Int32" />
+    <NavigationProperty Name="FMS_tbl_AirBusDetails" Relationship="Self.FK__FMS_tbl_A__AirBu__09160B73" FromRole="FMS_tbl_AirBusSeries" ToRole="FMS_tbl_AirBusDetails" />
+  </EntityType>
+  <EntityType Name="FMS_tbl_BonusMilesDEtails">
+    <Key>
+      <PropertyRef Name="BonusMilesId" />
+    </Key>
+    <Property Name="BonusMilesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FlightScheduleId" Type="Int32" />
+    <Property Name="BonusMiles" Type="Int32" />
+    <NavigationProperty Name="FMS_tbl_FlightScheduleDetails" Relationship="Self.FK__FMS_tbl_B__Fligh__0FC30902" FromRole="FMS_tbl_BonusMilesDEtails" ToRole="FMS_tbl_FlightScheduleDetails" />
+  </EntityType>
+  <EntityType Name="FMS_tbl_EmployeeLogin">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Addres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearsOfExperiance" Type="Int32" />
+    <Property Name="DateOfJoining" Type="DateTime" Precision="3" />
+    <Property Name="CTC" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Pasword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Roles" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="place" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="stats" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FMS_tbl_FlightScheduleDetails">
+    <Key>
+      <PropertyRef Name="FlightScheduleId" />
+    </Key>
+    <Property Name="FlightScheduleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeparturePlace" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DestinationPlace" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Flight" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AirBusId" Type="Int32" />
+    <Property Name="DepartureDate" Type="DateTime" Precision="3" />
+    <Property Name="ArrivalTime" Type="DateTime" Precision="3" />
+    <Property Name="PremiumClassFare" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="FirstClassFare" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EconomyClassFare" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PremiumClassSeatingAvailability" Type="Int32" />
+    <Property Name="FirstClassSeatingAvailability" Type="Int32" />
+    <Property Name="EconomyClassSeatingAvailability" Type="Int32" />
+    <Property Name="VAT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TAX" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="stats" Type="Boolean" />
+    <Property Name="Descriptions" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FMS_tbl_AirBusDetails" Relationship="Self.FK__FMS_tbl_F__AirBu__0CE69C57" FromRole="FMS_tbl_FlightScheduleDetails" ToRole="FMS_tbl_AirBusDetails" />
+    <NavigationProperty Name="FMS_tbl_BonusMilesDEtails" Relationship="Self.FK__FMS_tbl_B__Fligh__0FC30902" FromRole="FMS_tbl_FlightScheduleDetails" ToRole="FMS_tbl_BonusMilesDEtails" />
+  </EntityType>
+  <Association Name="FK__FMS_tbl_A__AirBu__09160B73">
+    <End Role="FMS_tbl_AirBusSeries" Type="Self.FMS_tbl_AirBusSeries" Multiplicity="0..1" />
+    <End Role="FMS_tbl_AirBusDetails" Type="Self.FMS_tbl_AirBusDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FMS_tbl_AirBusSeries">
+        <PropertyRef Name="Series" />
+      </Principal>
+      <Dependent Role="FMS_tbl_AirBusDetails">
+        <PropertyRef Name="AirBusSeries" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FMS_tbl_F__AirBu__0CE69C57">
+    <End Role="FMS_tbl_AirBusDetails" Type="Self.FMS_tbl_AirBusDetails" Multiplicity="0..1" />
+    <End Role="FMS_tbl_FlightScheduleDetails" Type="Self.FMS_tbl_FlightScheduleDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FMS_tbl_AirBusDetails">
+        <PropertyRef Name="AirBusId" />
+      </Principal>
+      <Dependent Role="FMS_tbl_FlightScheduleDetails">
+        <PropertyRef Name="AirBusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FMS_tbl_B__Fligh__0FC30902">
+    <End Role="FMS_tbl_FlightScheduleDetails" Type="Self.FMS_tbl_FlightScheduleDetails" Multiplicity="0..1" />
+    <End Role="FMS_tbl_BonusMilesDEtails" Type="Self.FMS_tbl_BonusMilesDEtails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FMS_tbl_FlightScheduleDetails">
+        <PropertyRef Name="FlightScheduleId" />
+      </Principal>
+      <Dependent Role="FMS_tbl_BonusMilesDEtails">
+        <PropertyRef Name="FlightScheduleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CHN32_MMS124_TESTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FMS_tbl_AirBusDetails" EntityType="Self.FMS_tbl_AirBusDetails" />
+    <EntitySet Name="FMS_tbl_AirBusSeries" EntityType="Self.FMS_tbl_AirBusSeries" />
+    <EntitySet Name="FMS_tbl_BonusMilesDEtails" EntityType="Self.FMS_tbl_BonusMilesDEtails" />
+    <EntitySet Name="FMS_tbl_EmployeeLogin" EntityType="Self.FMS_tbl_EmployeeLogin" />
+    <EntitySet Name="FMS_tbl_FlightScheduleDetails" EntityType="Self.FMS_tbl_FlightScheduleDetails" />
+    <AssociationSet Name="FK__FMS_tbl_A__AirBu__09160B73" Association="Self.FK__FMS_tbl_A__AirBu__09160B73">
+      <End Role="FMS_tbl_AirBusSeries" EntitySet="FMS_tbl_AirBusSeries" />
+      <End Role="FMS_tbl_AirBusDetails" EntitySet="FMS_tbl_AirBusDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FMS_tbl_F__AirBu__0CE69C57" Association="Self.FK__FMS_tbl_F__AirBu__0CE69C57">
+      <End Role="FMS_tbl_AirBusDetails" EntitySet="FMS_tbl_AirBusDetails" />
+      <End Role="FMS_tbl_FlightScheduleDetails" EntitySet="FMS_tbl_FlightScheduleDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FMS_tbl_B__Fligh__0FC30902" Association="Self.FK__FMS_tbl_B__Fligh__0FC30902">
+      <End Role="FMS_tbl_FlightScheduleDetails" EntitySet="FMS_tbl_FlightScheduleDetails" />
+      <End Role="FMS_tbl_BonusMilesDEtails" EntitySet="FMS_tbl_BonusMilesDEtails" />
+    </AssociationSet>
+    <EntitySet Name="C_employee" EntityType="CHN32_MMS124_TESTModel.C_employee" />
+  </EntityContainer>
+  <EntityType Name="C_employee">
+    <Key>
+      <PropertyRef Name="Dept_id" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PhoneNumber" Type="Int64" Nullable="false" />
+    <Property Name="Experience" Type="Int32" Nullable="false" />
+    <Property Name="IsFaculty" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Dept_id" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

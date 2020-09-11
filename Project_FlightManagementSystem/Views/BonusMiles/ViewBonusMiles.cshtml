@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Project_FlightManagementSystem.Models.FMS_tbl_BonusMilesDEtails>
+
+@{
+    ViewBag.Title = "ViewDetails";
+}
+
+<h2>ViewDetails</h2>
+<style>
+    body {
+        background-image: url('../../scripts/B747-crashed.jpg');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: 100% 180%;
+    }
+</style>
+<body>
+    <div class="Container" style="background-color:white">
+        <div style="text-align:center;color:green">
+            @ViewBag.Message
+        </div><br /><br />
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BonusMilesId)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.Flight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.DeparturePlace)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.DestinationPlace)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.DepartureDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.ArrivalTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.stats)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.BonusMiles)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BonusMilesId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FMS_tbl_FlightScheduleDetails.Flight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FMS_tbl_FlightScheduleDetails.DeparturePlace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FMS_tbl_FlightScheduleDetails.DestinationPlace)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FMS_tbl_FlightScheduleDetails.DepartureDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FMS_tbl_FlightScheduleDetails.ArrivalTime)
+                    </td>
+                    <td>
+                        @if (item.FMS_tbl_FlightScheduleDetails.stats == true)
+                {
+                            <label>Scheduled</label>
+                        }
+                        else if (item.FMS_tbl_FlightScheduleDetails.stats == false)
+                        {
+                            <label>Cancelled</label>
+                        }
+                        else
+                        {
+                            <label>Completed</label>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BonusMiles)
+                    </td>
+                    <td>
+
+                        @Html.ActionLink("Delete", "DeleteBonusMilesById", new { id = item.BonusMilesId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>

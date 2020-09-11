@@ -1,0 +1,87 @@
+﻿@model Project_FlightManagementSystem.Models.FMS_tbl_BonusMilesDEtails
+
+@{
+    ViewBag.Title = "ViewDetails";
+}
+<style>
+    body {
+        background-image: url('../../scripts/B747-crashed.jpg');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: 100% 220%;
+    }
+</style>
+<h2>Search Details</h2>
+<body>
+    <br /><br />
+    <div class="container" style="background-color:white; ">
+
+
+        <br />
+
+
+        <div class="col-sm-offset-4">
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.BonusMilesId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BonusMilesId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.Flight)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FMS_tbl_FlightScheduleDetails.Flight)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.DeparturePlace)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FMS_tbl_FlightScheduleDetails.DeparturePlace)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.DestinationPlace)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FMS_tbl_FlightScheduleDetails.DestinationPlace)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.DepartureDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FMS_tbl_FlightScheduleDetails.DepartureDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_FlightScheduleDetails.ArrivalTime)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FMS_tbl_FlightScheduleDetails.ArrivalTime)
+                </dd>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BonusMiles)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BonusMiles)
+                </dd>
+
+            </dl>
+        </div>
+        <br />
+    </div>
+</body>

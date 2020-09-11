@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Project_FlightManagementSystem.Models.FMS_tbl_AirBusDetails>
+
+@{
+    ViewBag.Title = "Jaguar Air Fleet";
+}
+
+<h2>THE FLEET</h2>
+<body id="add">
+    <br />
+
+    <div class="container" style="background-color:white">
+
+        <div style="text-align:center;color:green">
+            @ViewBag.Message
+        </div>
+        
+        <table class="table">
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AirBusId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RegistrstionNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfCommencement)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ManufacturingDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PremiumClassSeatingCapacity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstClassSeatingCapacity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EconomyClassSeatingCapacity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TakeOffWeight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaximumFlightRange)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_AirBusSeries.Series)
+                </th>
+                <th>Details</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AirBusId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RegistrstionNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfCommencement)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ManufacturingDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PremiumClassSeatingCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstClassSeatingCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EconomyClassSeatingCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TakeOffWeight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaximumFlightRange)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FMS_tbl_AirBusSeries.Series)
+                    </td>
+
+                    <td>
+                        @*<input type="submit" name="EditAirBus" value="Edit" />*@
+                        @Html.ActionLink("Update", "EditAirBus", new { id = item.AirBusId }) |
+                        @Html.ActionLink("Delete", "DeleteAirBus", new { id = item.AirBusId })
+                    </td>
+
+                </tr>
+
+            }
+
+        </table>
+    </div>
+</body>

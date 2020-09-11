@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+   
+</head>
+<body>
+    <nav style="background-color:#87CEEB" class="navbar navbar-light bg-faded navbar-toggleable-md navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a style="color:black;font-size:20px; font-weight:bold;" class="navbar-brand"><img src="~/scripts/Jaguar.png" height="20" width="50" />Jaguar Airlines</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("FlightScheduler"))
+                        {
+
+                            <li><a style="color:black;font-size:15px; font-weight:bold; ">Welcome @User.Identity.Name</a></li>
+                            <li>@Html.ActionLink("Home", "Index", "Flight", new { area = "" }, new { style = "color:black;font-size:15px; font-weight:bold;" })</li>
+                                <li class="nav-item dropdown">
+                                    <a style="color:black; font-size:15px; font-weight:bold;" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                        Air Bus
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a>@Html.ActionLink("Add AirBus", "AddAirBus", "Flight")</a></li>
+                                        <li><a>@Html.ActionLink("View AirBus", "ViewAllAirBuses", "Flight")</a></li>
+                                        <li><a>@Html.ActionLink("Search AirBus", "ViewAirBusById", "Flight")</a></li>
+                                    </ul>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a style="color:black; font-size:15px; font-weight:bold;" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                        Flight Scheduling
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a>@Html.ActionLink("Schedule Flight", "AddFlightSchedule", "FlightScheduler")</a></li>
+                                        <li><a>@Html.ActionLink("View Scheduled Flights", "ViewAllFlightScheduling", "FlightScheduler")</a></li>
+                                        <li><a>@Html.ActionLink("Search Scheduled Flight", "ViewFlightScheduleById", "FlightScheduler")</a></li>
+                                    </ul>
+                                </li>
+
+                            @*<li class="nav-item dropdown">
+                                <a style="color:black;" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                                    Flight Scheduling
+                                </a>
+                                <div class="dropdown-menu text-center">
+                                    <a class="dropdown-item">@Html.ActionLink("Home", "Index", "Flight")</a>
+                                    <a class="dropdown-item">@Html.ActionLink("Schedule Flight", "AddFlightSchedule", "FlightScheduler")</a>
+                                    <a class="dropdown-item">@Html.ActionLink("View Scheduled Flights", "ViewAllFlightScheduling", "FlightScheduler")</a>
+                                    <a class="dropdown-item">@Html.ActionLink("Search Scheduled Flight", "ViewFlightScheduleById", "FlightScheduler")</a>
+                                </div>
+                            </li>*@
+                            
+                            <li>@Html.ActionLink("LOGOUT", "Logout", "Login", new { area = "" }, new {style = "color:black;font-size:15px; font-weight:bold;" })</li>
+                           
+                        }
+                        if (User.IsInRole("AirportOfficer"))
+                        {
+                            <li><a style="color:black;font-size:15px; font-weight:bold; ">Welcome @User.Identity.Name</a></li>
+                            <li>@Html.ActionLink("LOGOUT", "Logout", "Login", new { area = "" }, new { style = "color:black;font-size:15px; font-weight:bold;" })</li>
+                        }
+
+                        if (User.IsInRole("BonusMilesApprover"))
+                        {
+                            <li><a style="color:black;font-size:15px; font-weight:bold; ">Welcome @User.Identity.Name</a></li>
+                            <li>@Html.ActionLink("Home", "Index", "BonusMiles", new { area = "" }, new { style = "color:black;font-size:15px; font-weight:bold;" })</li>
+                            <li class="nav-item dropdown">
+                                <a style="color:black; font-size:15px; font-weight:bold;" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                    Bonus Miles
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    
+                                    <li><a>@Html.ActionLink("Add BonusMiles", "AddBonusMiles", "BonusMiles")</a></li>
+                                    <li><a>@Html.ActionLink("View BonusMiles", "ViewBonusMiles", "BonusMiles")</a></li>
+                                    <li><a>@Html.ActionLink("Search BonusMiles", "ViewBonusMilesById", "BonusMiles")</a></li>
+                                </ul>
+                            </li>
+                            @*<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                                    Bonus Miles
+                                </a>
+                                <div class="dropdown-menu text-center">
+                                    <a class="dropdown-item">@Html.ActionLink("Home", "Index", "BonusMiles")</a>
+                                    <a class="dropdown-item">@Html.ActionLink("Add BonusMiles", "AddBonusMiles", "BonusMiles")</a>
+                                    <a class="dropdown-item">@Html.ActionLink("View BonusMiles", "ViewBonusMiles", "BonusMiles")</a>
+                                    <a class="dropdown-item">@Html.ActionLink("Search BonusMiles", "ViewBonusMilesById", "BonusMiles")</a>
+                                </div>
+                            </li>*@
+                            <li>@Html.ActionLink("LOGOUT", "Logout", "Login", new { area = "" }, new { style = "color:black;font-size:15px; font-weight:bold;" })</li>
+
+                        }
+
+                    }
+
+                    else
+                    {
+                        <li style="font-size:15px; font-weight:bold">@Html.ActionLink("About", "About", "Login", new { area = "" }, new { @class = "navbar-brand", style = "color:black" })</li>
+                        <li style="font-size:15px; font-weight:bold">@Html.ActionLink("Contact", "Contact", "Login", new { area = "" }, new { @class = "navbar-brand", style = "color:black" })</li>
+                        <li style="font-size:15px; font-weight:bold">@Html.ActionLink("SignIn", "Index", "Login",  new { area = "" }, new { @class = "navbar-brand", style="color:black"})</li>
+
+                    }
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+
+        @RenderBody()
+
+        <footer class="navbar-fixed-bottom text-center">
+            <p>&copy; @DateTime.Now.Year - Jaguar Airways Ltd.</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

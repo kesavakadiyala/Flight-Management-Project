@@ -1,0 +1,144 @@
+﻿@model Project_FlightManagementSystem.Models.FMS_tbl_AirBusDetails
+
+@{
+    ViewBag.Title = "CHANGE AIRBUS DETAILS";
+}
+<style>
+    #add {
+        background-image: url('../../scripts/legacy_500_firstflight_parked.jpg');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: 100% 130%;
+    }
+</style>
+
+<h2>CHANGE AIRBUS DETAILS</h2>
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <body id="add">
+        <div class="container" style="background-color:white">
+
+            <hr />
+
+            <div style="text-align:center;color:green">
+                @ViewBag.Message
+            </div>
+            <div style="text-align:center;color:red">
+                @ViewBag.Messag
+            </div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.AirBusId)
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PremiumClassSeatingCapacity, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.PremiumClassSeatingCapacity, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        @Html.ValidationMessageFor(model => model.PremiumClassSeatingCapacity, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TakeOffWeight, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.TakeOffWeight, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        @Html.ValidationMessageFor(model => model.TakeOffWeight, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MaximumFlightRange, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.MaximumFlightRange, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        @Html.ValidationMessageFor(model => model.MaximumFlightRange, "", new { @class = "text-danger" })
+
+                    </div>
+
+
+
+                </div>
+                <div class="col-sm-4">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.RegistrstionNumber, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.RegistrstionNumber, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        @Html.ValidationMessageFor(model => model.RegistrstionNumber, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.FirstClassSeatingCapacity, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.FirstClassSeatingCapacity, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        @Html.ValidationMessageFor(model => model.FirstClassSeatingCapacity, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ManufacturingDate, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.ManufacturingDate, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        @Html.ValidationMessageFor(model => model.ManufacturingDate, "", new { @class = "text-danger" })
+
+                    </div>
+
+
+
+                </div>
+                <div class="col-sm-4">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AirBusSeries, "AirBusSeries", htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.AirBusSeries, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        @Html.ValidationMessageFor(model => model.AirBusSeries, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EconomyClassSeatingCapacity, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.EconomyClassSeatingCapacity, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        @Html.ValidationMessageFor(model => model.EconomyClassSeatingCapacity, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DateOfCommencement, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.DateOfCommencement, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DateOfCommencement, "", new { @class = "text-danger" })
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-6">
+                    <input type="submit" value="Save" name="Edit" class="btn btn-default btn-primary" />
+                </div>
+            </div>
+        </div>
+    </body>
+}
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

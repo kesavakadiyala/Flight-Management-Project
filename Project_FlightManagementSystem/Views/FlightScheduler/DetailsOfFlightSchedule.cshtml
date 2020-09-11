@@ -1,0 +1,167 @@
+﻿@model Project_FlightManagementSystem.Models.FMS_tbl_FlightScheduleDetails
+
+@{
+    ViewBag.Title = "DetailsOfFlightSchedule";
+}
+<style>
+    #add {
+        background-image: url('../../scripts/WHDQ-512383449.jpg');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: 100% 120%;
+    }
+</style>
+
+<h2>DetailsOfFlightSchedule</h2>
+<body id="add">
+    <br /><br />
+    <div class="container" style="background-color:white">
+        <br />
+        <div class="col-sm-offset-4">
+
+            <dl class="dl-horizontal">
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FlightScheduleId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FlightScheduleId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DeparturePlace)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DeparturePlace)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DestinationPlace)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DestinationPlace)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Flight)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Flight)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DepartureDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DepartureDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ArrivalTime)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ArrivalTime)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PremiumClassFare)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PremiumClassFare)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstClassFare)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstClassFare)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EconomyClassFare)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EconomyClassFare)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PremiumClassSeatingAvailability)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PremiumClassSeatingAvailability)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstClassSeatingAvailability)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstClassSeatingAvailability)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EconomyClassSeatingAvailability)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EconomyClassSeatingAvailability)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.VAT)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.VAT)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TAX)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TAX)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Distance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Distance)
+                </dd>
+
+               
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Descriptions)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Descriptions)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_AirBusDetails.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FMS_tbl_AirBusDetails.Name)
+                </dd>
+
+            </dl>
+        </div>
+        <br />
+    </div>
+</body>
+

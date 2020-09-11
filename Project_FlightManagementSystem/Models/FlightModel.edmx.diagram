@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="16e9aba8b1d349309f7ed9e8a56e3d55" Name="Diagram1">
+        <EntityTypeShape EntityType="CHN32_MMS124_TESTModel.FMS_tbl_AirBusDetails" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHN32_MMS124_TESTModel.FMS_tbl_AirBusSeries" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHN32_MMS124_TESTModel.FMS_tbl_BonusMilesDEtails" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHN32_MMS124_TESTModel.FMS_tbl_EmployeeLogin" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHN32_MMS124_TESTModel.FMS_tbl_FlightScheduleDetails" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="CHN32_MMS124_TESTModel.FK__FMS_tbl_A__AirBu__09160B73" ManuallyRouted="false" />
+        <AssociationConnector Association="CHN32_MMS124_TESTModel.FK__FMS_tbl_F__AirBu__0CE69C57" ManuallyRouted="false" />
+        <AssociationConnector Association="CHN32_MMS124_TESTModel.FK__FMS_tbl_B__Fligh__0FC30902" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CHN32_MMS124_TESTModel.C_employee" Width="1.5" PointX="0.75" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

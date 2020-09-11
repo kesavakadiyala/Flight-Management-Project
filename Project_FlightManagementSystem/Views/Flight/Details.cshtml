@@ -1,0 +1,111 @@
+﻿@model Project_FlightManagementSystem.Models.FMS_tbl_AirBusDetails
+
+@{
+    ViewBag.Title = "AIRBUS DETAILS";
+}
+
+<style>
+    #add {
+        background-image: url('../../scripts/legacy_500_firstflight_parked.jpg');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: 100% 185%;
+    }
+</style>
+
+<h2>AIRBUS DETAILS</h2>
+<body id="add">
+    <br /><br />
+    <div class="container" style="background-color:white">
+
+        <br />
+
+        <div class="col-sm-offset-4">
+
+           
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.RegistrstionNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RegistrstionNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateOfCommencement)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateOfCommencement)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ManufacturingDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ManufacturingDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PremiumClassSeatingCapacity)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PremiumClassSeatingCapacity)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstClassSeatingCapacity)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstClassSeatingCapacity)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EconomyClassSeatingCapacity)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EconomyClassSeatingCapacity)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TakeOffWeight)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TakeOffWeight)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MaximumFlightRange)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MaximumFlightRange)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FMS_tbl_AirBusSeries.Series)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FMS_tbl_AirBusSeries.Series)
+                </dd>
+
+            </dl>
+        </div>
+        <br />
+    </div>
+</body>

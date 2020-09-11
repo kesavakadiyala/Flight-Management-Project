@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CHN32_MMS124_TESTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="_employee">
+    <Key>
+      <PropertyRef Name="Dept_id" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+    <Property Name="PhoneNumber" Type="bigint" Nullable="false" />
+    <Property Name="Experience" Type="int" Nullable="false" />
+    <Property Name="IsFaculty" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Dept_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FMS_tbl_AirBusDetails">
+    <Key>
+      <PropertyRef Name="AirBusId" />
+    </Key>
+    <Property Name="AirBusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="RegistrstionNumber" Type="varchar" MaxLength="20" />
+    <Property Name="DateOfCommencement" Type="datetime" />
+    <Property Name="ManufacturingDate" Type="datetime" />
+    <Property Name="AirBusSeries" Type="varchar" MaxLength="20" />
+    <Property Name="PremiumClassSeatingCapacity" Type="int" />
+    <Property Name="FirstClassSeatingCapacity" Type="int" />
+    <Property Name="EconomyClassSeatingCapacity" Type="int" />
+    <Property Name="TakeOffWeight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MaximumFlightRange" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="FMS_tbl_AirBusSeries">
+    <Key>
+      <PropertyRef Name="Series" />
+    </Key>
+    <Property Name="AirBusSeriesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Series" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Height" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="AirBusLength" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MaxTakeOffWeight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="StandardFuelCapacity" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MaxSpeed" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="CabinLength" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PremiumClassSeatingCapacity" Type="int" />
+    <Property Name="FirstClassSeatingCapacity" Type="int" />
+    <Property Name="EconomyClassSeatingCapacity" Type="int" />
+  </EntityType>
+  <EntityType Name="FMS_tbl_BonusMilesDEtails">
+    <Key>
+      <PropertyRef Name="BonusMilesId" />
+    </Key>
+    <Property Name="BonusMilesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FlightScheduleId" Type="int" />
+    <Property Name="BonusMiles" Type="int" />
+  </EntityType>
+  <EntityType Name="FMS_tbl_EmployeeLogin">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="30" />
+    <Property Name="LastName" Type="varchar" MaxLength="30" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="Addres" Type="varchar" MaxLength="50" />
+    <Property Name="YearsOfExperiance" Type="int" />
+    <Property Name="DateOfJoining" Type="datetime" />
+    <Property Name="CTC" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Pasword" Type="varchar" MaxLength="30" />
+    <Property Name="Roles" Type="varchar" MaxLength="30" />
+    <Property Name="place" Type="varchar" MaxLength="30" />
+    <Property Name="stats" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="FMS_tbl_FlightScheduleDetails">
+    <Key>
+      <PropertyRef Name="FlightScheduleId" />
+    </Key>
+    <Property Name="FlightScheduleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeparturePlace" Type="varchar" MaxLength="30" />
+    <Property Name="DestinationPlace" Type="varchar" MaxLength="30" />
+    <Property Name="Flight" Type="varchar" MaxLength="30" />
+    <Property Name="AirBusId" Type="int" />
+    <Property Name="DepartureDate" Type="datetime" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="PremiumClassFare" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="FirstClassFare" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="EconomyClassFare" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PremiumClassSeatingAvailability" Type="int" />
+    <Property Name="FirstClassSeatingAvailability" Type="int" />
+    <Property Name="EconomyClassSeatingAvailability" Type="int" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TAX" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="stats" Type="bit" />
+    <Property Name="Descriptions" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK__FMS_tbl_A__AirBu__09160B73">
+    <End Role="FMS_tbl_AirBusSeries" Type="Self.FMS_tbl_AirBusSeries" Multiplicity="0..1" />
+    <End Role="FMS_tbl_AirBusDetails" Type="Self.FMS_tbl_AirBusDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FMS_tbl_AirBusSeries">
+        <PropertyRef Name="Series" />
+      </Principal>
+      <Dependent Role="FMS_tbl_AirBusDetails">
+        <PropertyRef Name="AirBusSeries" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FMS_tbl_B__Fligh__0FC30902">
+    <End Role="FMS_tbl_FlightScheduleDetails" Type="Self.FMS_tbl_FlightScheduleDetails" Multiplicity="0..1" />
+    <End Role="FMS_tbl_BonusMilesDEtails" Type="Self.FMS_tbl_BonusMilesDEtails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FMS_tbl_FlightScheduleDetails">
+        <PropertyRef Name="FlightScheduleId" />
+      </Principal>
+      <Dependent Role="FMS_tbl_BonusMilesDEtails">
+        <PropertyRef Name="FlightScheduleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FMS_tbl_F__AirBu__0CE69C57">
+    <End Role="FMS_tbl_AirBusDetails" Type="Self.FMS_tbl_AirBusDetails" Multiplicity="0..1" />
+    <End Role="FMS_tbl_FlightScheduleDetails" Type="Self.FMS_tbl_FlightScheduleDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FMS_tbl_AirBusDetails">
+        <PropertyRef Name="AirBusId" />
+      </Principal>
+      <Dependent Role="FMS_tbl_FlightScheduleDetails">
+        <PropertyRef Name="AirBusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CHN32_MMS124_TESTModelStoreContainer">
+    <EntitySet Name="_employee" EntityType="Self._employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FMS_tbl_AirBusDetails" EntityType="Self.FMS_tbl_AirBusDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FMS_tbl_AirBusSeries" EntityType="Self.FMS_tbl_AirBusSeries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FMS_tbl_BonusMilesDEtails" EntityType="Self.FMS_tbl_BonusMilesDEtails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FMS_tbl_EmployeeLogin" EntityType="Self.FMS_tbl_EmployeeLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FMS_tbl_FlightScheduleDetails" EntityType="Self.FMS_tbl_FlightScheduleDetails" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__FMS_tbl_A__AirBu__09160B73" Association="Self.FK__FMS_tbl_A__AirBu__09160B73">
+      <End Role="FMS_tbl_AirBusSeries" EntitySet="FMS_tbl_AirBusSeries" />
+      <End Role="FMS_tbl_AirBusDetails" EntitySet="FMS_tbl_AirBusDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FMS_tbl_B__Fligh__0FC30902" Association="Self.FK__FMS_tbl_B__Fligh__0FC30902">
+      <End Role="FMS_tbl_FlightScheduleDetails" EntitySet="FMS_tbl_FlightScheduleDetails" />
+      <End Role="FMS_tbl_BonusMilesDEtails" EntitySet="FMS_tbl_BonusMilesDEtails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FMS_tbl_F__AirBu__0CE69C57" Association="Self.FK__FMS_tbl_F__AirBu__0CE69C57">
+      <End Role="FMS_tbl_AirBusDetails" EntitySet="FMS_tbl_AirBusDetails" />
+      <End Role="FMS_tbl_FlightScheduleDetails" EntitySet="FMS_tbl_FlightScheduleDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

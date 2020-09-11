@@ -1,0 +1,46 @@
+﻿@model Project_FlightManagementSystem.Models.FMS_tbl_BonusMilesDEtails
+@{
+    ViewBag.Title = "viewiddetails";
+}
+
+<h2>Search Miles</h2>
+<style>
+    body {
+        background-image: url('../../scripts/B747-crashed.jpg');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: 100% 190%;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <body>
+        <br /><br /><br /><br /><br />
+        <div class="container">
+            <div class="row">
+                <div class="text-center" style="color:red">
+                    @ViewBag.message
+                </div>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="col-md-offset-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BonusMilesId, htmlAttributes: new { @class = "control-label" })
+
+                        @Html.EditorFor(model => model.BonusMilesId, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                        @Html.ValidationMessageFor(model => model.FlightScheduleId, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-5">
+                    <input type="submit" value="SEARCH" class="btn btn-default btn-primary" />
+                </div>
+            </div>
+        </div>
+    </body>
+}
+
+

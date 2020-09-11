@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CHN32_MMS124_TESTModelStoreContainer" CdmEntityContainer="CHN32_MMS124_TESTEntities">
+    <EntitySetMapping Name="FMS_tbl_AirBusDetails">
+      <EntityTypeMapping TypeName="CHN32_MMS124_TESTModel.FMS_tbl_AirBusDetails">
+        <MappingFragment StoreEntitySet="FMS_tbl_AirBusDetails">
+          <ScalarProperty Name="AirBusId" ColumnName="AirBusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegistrstionNumber" ColumnName="RegistrstionNumber" />
+          <ScalarProperty Name="DateOfCommencement" ColumnName="DateOfCommencement" />
+          <ScalarProperty Name="ManufacturingDate" ColumnName="ManufacturingDate" />
+          <ScalarProperty Name="AirBusSeries" ColumnName="AirBusSeries" />
+          <ScalarProperty Name="PremiumClassSeatingCapacity" ColumnName="PremiumClassSeatingCapacity" />
+          <ScalarProperty Name="FirstClassSeatingCapacity" ColumnName="FirstClassSeatingCapacity" />
+          <ScalarProperty Name="EconomyClassSeatingCapacity" ColumnName="EconomyClassSeatingCapacity" />
+          <ScalarProperty Name="TakeOffWeight" ColumnName="TakeOffWeight" />
+          <ScalarProperty Name="MaximumFlightRange" ColumnName="MaximumFlightRange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FMS_tbl_AirBusSeries">
+      <EntityTypeMapping TypeName="CHN32_MMS124_TESTModel.FMS_tbl_AirBusSeries">
+        <MappingFragment StoreEntitySet="FMS_tbl_AirBusSeries">
+          <ScalarProperty Name="AirBusSeriesId" ColumnName="AirBusSeriesId" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="AirBusLength" ColumnName="AirBusLength" />
+          <ScalarProperty Name="MaxTakeOffWeight" ColumnName="MaxTakeOffWeight" />
+          <ScalarProperty Name="StandardFuelCapacity" ColumnName="StandardFuelCapacity" />
+          <ScalarProperty Name="MaxSpeed" ColumnName="MaxSpeed" />
+          <ScalarProperty Name="CabinLength" ColumnName="CabinLength" />
+          <ScalarProperty Name="PremiumClassSeatingCapacity" ColumnName="PremiumClassSeatingCapacity" />
+          <ScalarProperty Name="FirstClassSeatingCapacity" ColumnName="FirstClassSeatingCapacity" />
+          <ScalarProperty Name="EconomyClassSeatingCapacity" ColumnName="EconomyClassSeatingCapacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FMS_tbl_BonusMilesDEtails">
+      <EntityTypeMapping TypeName="CHN32_MMS124_TESTModel.FMS_tbl_BonusMilesDEtails">
+        <MappingFragment StoreEntitySet="FMS_tbl_BonusMilesDEtails">
+          <ScalarProperty Name="BonusMilesId" ColumnName="BonusMilesId" />
+          <ScalarProperty Name="FlightScheduleId" ColumnName="FlightScheduleId" />
+          <ScalarProperty Name="BonusMiles" ColumnName="BonusMiles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FMS_tbl_EmployeeLogin">
+      <EntityTypeMapping TypeName="CHN32_MMS124_TESTModel.FMS_tbl_EmployeeLogin">
+        <MappingFragment StoreEntitySet="FMS_tbl_EmployeeLogin">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Addres" ColumnName="Addres" />
+          <ScalarProperty Name="YearsOfExperiance" ColumnName="YearsOfExperiance" />
+          <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+          <ScalarProperty Name="CTC" ColumnName="CTC" />
+          <ScalarProperty Name="Pasword" ColumnName="Pasword" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="stats" ColumnName="stats" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FMS_tbl_FlightScheduleDetails">
+      <EntityTypeMapping TypeName="CHN32_MMS124_TESTModel.FMS_tbl_FlightScheduleDetails">
+        <MappingFragment StoreEntitySet="FMS_tbl_FlightScheduleDetails">
+          <ScalarProperty Name="FlightScheduleId" ColumnName="FlightScheduleId" />
+          <ScalarProperty Name="DeparturePlace" ColumnName="DeparturePlace" />
+          <ScalarProperty Name="DestinationPlace" ColumnName="DestinationPlace" />
+          <ScalarProperty Name="Flight" ColumnName="Flight" />
+          <ScalarProperty Name="AirBusId" ColumnName="AirBusId" />
+          <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="PremiumClassFare" ColumnName="PremiumClassFare" />
+          <ScalarProperty Name="FirstClassFare" ColumnName="FirstClassFare" />
+          <ScalarProperty Name="EconomyClassFare" ColumnName="EconomyClassFare" />
+          <ScalarProperty Name="PremiumClassSeatingAvailability" ColumnName="PremiumClassSeatingAvailability" />
+          <ScalarProperty Name="FirstClassSeatingAvailability" ColumnName="FirstClassSeatingAvailability" />
+          <ScalarProperty Name="EconomyClassSeatingAvailability" ColumnName="EconomyClassSeatingAvailability" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="TAX" ColumnName="TAX" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="stats" ColumnName="stats" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C_employee">
+      <EntityTypeMapping TypeName="CHN32_MMS124_TESTModel.C_employee">
+        <MappingFragment StoreEntitySet="_employee">
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+          <ScalarProperty Name="IsFaculty" ColumnName="IsFaculty" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
